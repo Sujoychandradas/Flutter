@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:sliver_advanced_ui/example.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
+import 'package:local_database_hive/example.dart';
+import 'package:local_database_hive/splashscreen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  // var box = await Hive.openBox('testBox');
+
+  // box.put('name', 'David');
+
+  // print('Name: ${box.get('name')}');
+  Box box = await Hive.openBox('notepad');
   runApp(const MyApp());
 }
 
@@ -12,7 +23,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-    
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -33,9 +43,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Example(),
+      routes: {
+        '/splash': (context) => SplashScreen(),
+        '/example': (context) => Example(),
+      },
+      initialRoute: '/splash',
     );
   }
 }
-
-
