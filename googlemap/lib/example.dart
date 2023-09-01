@@ -91,9 +91,9 @@ class _ExampleState extends State<Example> {
                 mapType: MapType.normal,
                 initialCameraPosition: CameraPosition(
                   target: LatLng(
-            _locationData!.latitude!.toDouble(),
-            _locationData!.longitude!.toDouble(),
-          ),
+                    _locationData!.latitude!.toDouble(),
+                    _locationData!.longitude!.toDouble(),
+                  ),
                   zoom: 15,
                   //24.386949864334294, 91.89817196065269
                 ),
