@@ -65,7 +65,11 @@ class _HomeState extends State<Home> {
         ),
         body: Center(
             child: Column(
+          // mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
+            SizedBox(
+              height: 50,
+            ),
             Obx(
               () => Text(
                 counterController.value.value.toString(),
