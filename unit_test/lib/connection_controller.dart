@@ -3,7 +3,7 @@ class ConnectionController {
 
   checkConnection(state) {
     if (state == ConnectionState.Connected) {
-      return 'Connectd';
+      return 'Connected';
     } else if (state == ConnectionState.Disconnected) {
       return 'Disconnected';
     } else if (state == ConnectionState.Waiting) {
