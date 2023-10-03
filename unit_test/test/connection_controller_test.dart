@@ -30,10 +30,4 @@ void main() {
       },
     );
   });
-  // test('Connection Checker', () {
-  //  final state = connectionController.checkConnection(ConnectionState.Connected);
-  //   expect(state,'Connected');
-
-  // },
-  // );
 }
