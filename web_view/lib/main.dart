@@ -49,9 +49,20 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text('Webview')),
-        body: WebViewWidget(
-          controller: controller,
-        ));
+      appBar: AppBar(title: const Text('Webview')),
+      body: WebViewWidget(
+        controller: controller,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          if (await controller.canGoBack()) {
+            return controller.goBack();
+          } else {
+            return null;
+          }
+        },
+        child: Icon(Icons.arrow_back),
+      ),
+    );
   }
 }
