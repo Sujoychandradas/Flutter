@@ -72,6 +72,7 @@ class _HomeState extends State<Home> {
       _fetchData();
     } else {
       print('Failed to delete data');
+      
     }
   }
 
